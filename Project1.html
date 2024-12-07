@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js - TimeProject</title>
+    <style>
+      body {
+        height: 100vh;
+        font-family: "Arial", sans-serif;
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      .clock-containr {
+        font-size: 50px;
+        text-align: center;
+        border-radius: 10px;
+        border: 3px, solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock-containr">
+      <h1 class="time">00:00:00</h1>
+    </div>
+
+    <script>
+      setInterval(() => {
+        const element = document.querySelector(".time");
+
+        const time = new Date();
+
+        const option = {
+          timeZone: "Asia/Kolkata",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+        element.textContent = time.toLocaleTimeString("en-US", option);
+      }, 1000);
+    </script>
+  </body>
+</html>
